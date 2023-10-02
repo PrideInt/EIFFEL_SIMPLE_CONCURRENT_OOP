@@ -42,26 +42,18 @@ feature
 feature
     run
         do
-            if val < 50 then
-                increment
+            increment
 
-                print(id + ": " + val.out)
-                print("%N")
-            end
+            print(id + ": " + val.out)
+            print("%N")
             (create {EXECUTION_ENVIRONMENT}).sleep(speed * 1_000_000)
         end
 
     chosen(get: INTEGER)
-        require
-            valid_chosen(get)
         do
-            if val = get then
-                print("%N")
-				print("REVEALED! " + id + " has CHOSEN: " + get.out)
-				print("%N%N")
-            end
-        ensure
-            get = 2
+            print("%N")
+	    print("REVEALED! " + id + " has CHOSEN: " + get.out)
+	    print("%N%N")
         end
 
     increment
